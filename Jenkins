@@ -1,0 +1,23 @@
+pipeline {
+agent any
+
+stages () {
+stage (git clone) {
+steps {
+sh 'Githuburl'
+}
+}
+stage (Sonarqube integration) {
+steps {
+sh/opt/sonar_scanner/bin -Dprojectname='test'" 
+}
+}
+stage (maven_compilation) {
+steps {
+sh 'mvn clean install' }
+}
+}
+
+
+
+}
